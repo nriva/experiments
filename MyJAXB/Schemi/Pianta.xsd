@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<xs:schema
+  xmlns:sc2="http://www.flora.bindings.com"
+  xmlns:sc1="http://www.elementiBase.bindings.com"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.flora.bindings.com"
+>
+<xs:import namespace="http://www.elementiBase.bindings.com" schemaLocation="./Radice.xsd" />
+<xs:import namespace="http://www.elementiBase.bindings.com" schemaLocation="./Fusto.xsd" />
+<xs:import namespace="http://www.elementiBase.bindings.com" schemaLocation="./Foglia.xsd" />
+<xs:element name="Pianta">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Nome" type="xs:string" />
+      <xs:element ref="sc1:TipologiaRadice" />
+      <xs:element ref="sc1:CaratteristicheFusto" />
+      <xs:element ref="sc1:CaratteristicheFoglie" />     
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

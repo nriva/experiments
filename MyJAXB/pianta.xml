@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns3:Pianta xmlns:ns2="http://www.elementiBase.bindings.com" xmlns:ns3="http://www.flora.bindings.com">
+    <Nome>Quercia</Nome>
+    <ns2:TipologiaRadice>
+        <Ramificazione>decisa</Ramificazione>
+        <Resistenza>alta</Resistenza>
+    </ns2:TipologiaRadice>
+    <ns2:CaratteristicheFusto>
+        <Tipo>Dritto</Tipo>
+        <Spessore>1</Spessore>
+        <Altezza>15</Altezza>
+    </ns2:CaratteristicheFusto>
+    <ns2:CaratteristicheFoglie>
+        <Tipo>Lobate</Tipo>
+        <Forma>Ellittica</Forma>
+    </ns2:CaratteristicheFoglie>
+</ns3:Pianta>
