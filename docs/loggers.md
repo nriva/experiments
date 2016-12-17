@@ -38,7 +38,7 @@ Bridge verso SLF4J con jul2.properties
   
 ## Caso 2: Apache Common Logging
 
-https://cyntech.wordpress.com/2009/01/09/how-to-use-commons-logging/
+(https://cyntech.wordpress.com/2009/01/09/how-to-use-commons-logging/)
 
 Output senza configurazione:
 
