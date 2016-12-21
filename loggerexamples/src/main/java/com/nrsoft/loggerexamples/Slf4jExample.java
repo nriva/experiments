@@ -5,9 +5,8 @@ package com.nrsoft.loggerexamples;
 
 /**
  * Slf4jLogbackExample
- * CASO 2: API:slf4j BINDING:logback	--> usa logback.xml
- * CASO 4: API:slf4j BINDING:log4j		--> usa log4j.properties
- * CASO 6: API:slf4j BINDING:jul
+ * CASO 4.1: API:slf4j BINDING:logback	--> usa logback.xml
+ * CASO 4.2: API:slf4j BINDING:log4j	--> usa log4j.properties
  * @author riva
  *
  */

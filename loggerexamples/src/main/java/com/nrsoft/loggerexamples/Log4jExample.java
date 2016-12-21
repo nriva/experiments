@@ -7,7 +7,7 @@ package com.nrsoft.loggerexamples;
 
 /**
  *
- * CASO 3: Log4jExample
+ * CASO 5: Log4jExample
  * Esempio di uso di API:log4j BINDING:logback
  * Usa il file logback.xml
  *

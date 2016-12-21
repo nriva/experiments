@@ -60,68 +60,26 @@
 	
 	
 	<!--  CASO 2: Apache Common Logging -->
-<dependency>
-    <groupId>commons-logging</groupId>
-    <artifactId>commons-logging</artifactId>
-    <version>1.2</version>
-</dependency>
-
-
-
-	
-    
-<!-- CASO : log4j -->
-<!-- API & BINDING: -->
-<!--   
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.7</version>
-</dependency>
- -->
-  
-<!-- CASO 2: slf4j su logback -->
-<!-- API:
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-api</artifactId>
-    <version>1.7.22</version>
-</dependency>
--->
-<!-- BINDING:
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-core</artifactId>
-    <version>1.1.8</version>
-</dependency>
-
-<dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-classic</artifactId>
-    <version>1.1.8</version>
-</dependency>
-
--->
-
-	<!-- CASO 3: -->
-	<!-- API: 
-	
+	<!-- 
 	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>log4j-over-slf4j</artifactId>
-	    <version>1.7.22</version>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.2</version>
 	</dependency>
 	-->
-	<!-- BINDING:  
-	 <dependency>
-	    <groupId>ch.qos.logback</groupId>
-	    <artifactId>logback-classic</artifactId>
-	    <version>1.1.8</version>
+    
+	<!-- CASO 3 : log4j -->
+	<!-- API & BINDING: -->
+	<!--    
+	<dependency>
+	    <groupId>org.apache.logging.log4j</groupId>
+	    <artifactId>log4j-core</artifactId>
+	    <version>2.7</version>
 	</dependency>
-	-->
-	
-	<!-- CASO 4: -->
-	<!-- API: 
+	 -->
+  
+	<!-- CASO 4.1: slf4j su logback -->
+	<!-- API:  
 	<dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-api</artifactId>
@@ -130,43 +88,73 @@
 	-->
 	<!-- BINDING: 
 	<dependency>
-	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-log4j12</artifactId>
-	    <version>1.7.22</version>
-	</dependency>
-	-->
-
-	
-	
-	<!-- CASO 6: -->
-	<!-- API: --> <!-- java util common logging è presente in JDK -->
-	<!-- BINDING: -->
-	<!-- 
-	<dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>jul-to-slf4j</artifactId>
-    	<version>1.7.22</version>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-core</artifactId>
+	    <version>1.1.8</version>
 	</dependency>
 	<dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-classic</artifactId>
 	    <version>1.1.8</version>
 	</dependency>
-	 -->
+	-->
 	
-	
-	<!-- CASO 7: -->
-	<!-- 
+	<!-- CASO 4.2: slf4j su log4j-->
+	<!-- API:  
 	<dependency>
 	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-jdk14</artifactId>
+	    <artifactId>slf4j-api</artifactId>
 	    <version>1.7.22</version>
 	</dependency>
-	 -->
-	
-	
-	
+	-->
+	<!-- BINDING:  
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-log4j12</artifactId>
+	    <version>1.7.22</version>
+	</dependency>
+-->
 	
 
+
+	<!-- CASO 5: -->
+	<!-- API:  
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>log4j-over-slf4j</artifactId>
+	    <version>1.7.22</version>
+	</dependency>
+	-->
+	<!-- BINDING:   
+	 <dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.1.8</version>
+	</dependency>
+	-->
+	
+	<!-- CASO 6: Bridge JUL logback -->
+	<!-- BRIDGE: 
+ 
+	<dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>jul-to-slf4j</artifactId>
+    	<version>1.7.22</version>
+	</dependency>
+-->
+	<!-- API:   
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.22</version>
+	</dependency>
+	-->
+	<!-- BINDING: 
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.1.8</version>
+	</dependency>
+	-->
   </dependencies>
 </project>
