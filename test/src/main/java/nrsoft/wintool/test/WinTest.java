@@ -28,7 +28,7 @@ public class WinTest {
 				menu.setVisible(true);
 			}
 		});
-		trayItem.setImage(SWTResourceManager.getImage( WinTest.class,"/Card_file.ico"));
+		trayItem.setImage(SWTResourceManager.getImage( WinTest.class,"/squirrel.ico"));
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 300);
