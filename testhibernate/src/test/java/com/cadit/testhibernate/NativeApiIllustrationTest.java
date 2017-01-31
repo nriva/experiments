@@ -1,3 +1,4 @@
+package com.cadit.testhibernate;
 
 
 import java.util.Date;
