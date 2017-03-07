@@ -4,8 +4,6 @@ package com.nrsoft.loggerexamples;
 //import org.apache.logging.log4j.Logger;
 
 /**
- * Log4j2Example
- * CASO 3: Esempio di uso di log4j2
  * Usa il file log4j2.xml
  *
  */

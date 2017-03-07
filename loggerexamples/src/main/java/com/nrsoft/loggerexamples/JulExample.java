@@ -5,26 +5,24 @@ import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+import org.slf4j.bridge.SLF4JBridgeHandler;
+
 /**
- * CASO 1: Java Util Common logging example
- * CASO 1.1: usa jul.properties
- * CASO 1.2: usa jul2.properties
- * CASO 6: usa julbrige.properties
+ * Java Util Logging
  * @author riva
- *
  */
 public class JulExample {
 
 	private static final Logger logger = Logger.getLogger(JulExample.class.getName());
-	private static final LogManager logManager = LogManager.getLogManager();
+//	private static final LogManager logManager = LogManager.getLogManager();
 
 	public static void main(String[] args) throws SecurityException, IOException {
 		
-//        logManager.readConfiguration(JulExample.class.getResourceAsStream("/jul.properties"));			// CASO 1.1
+//        logManager.readConfiguration(JulExample.class.getResourceAsStream("/jul.properties"));			// Esmepio jul/1
         
-//        logManager.readConfiguration(JulExample.class.getResourceAsStream("/jul2.properties"));				// CASO 1.2
+//        logManager.readConfiguration(JulExample.class.getResourceAsStream("/julbridge.properties"));		// Esempio jul/2
 		
-		logManager.readConfiguration(JulExample.class.getResourceAsStream("/julbrige.properties"));				// CASO 6
+		 SLF4JBridgeHandler.install();																		// Esempio jul/2
 		
     	logger.config("testo di errore");
     	logger.warning("testo di warning");
@@ -32,10 +30,6 @@ public class JulExample {
     	logger.fine("testo di debug fine");
     	logger.finer("testo di trace finer");
     	logger.finest("testo di trace finest");
-    	logger.log(Level.SEVERE, "testi di errrore SEVERE");
-
-		
-
+    	logger.log(Level.SEVERE, "testi di errore SEVERE");
 	}
-
 }

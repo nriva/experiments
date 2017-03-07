@@ -3,6 +3,11 @@ package com.nrsoft.loggerexamples;
 //import org.apache.commons.logging.Log; 
 //import org.apache.commons.logging.LogFactory;
 
+/**
+ * Esempio: Apache Commons Logging 
+ * @author riva
+ *
+ */
 public class ApacheCommonsLoggingExample {
 	
 //	static Log logger = LogFactory.getLog(ApacheCommonsLoggingExample.class);

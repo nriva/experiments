@@ -31,54 +31,32 @@
 	<!-- BINDING: -->
 	
 	
-	<!--  CASO 1.2: -->
-	<!--  BRIDGE  -->
-	<!-- 
-	<dependency>
-  <groupId>org.slf4j</groupId>
-  <artifactId>jul-to-slf4j</artifactId>
-  <version>1.7.22</version>
-</dependency>
- -->
-	<!-- BINDING -->
-	<!-- CASO 1.2 -->
-	<!-- 
-	<dependency>
-  <groupId>org.slf4j</groupId>
-  <artifactId>slf4j-simple</artifactId>
-  <version>1.7.21</version>
-</dependency>
--->
-<!-- CASO 1.2.1 -->
-<!-- 
-	 <dependency>
-	    <groupId>ch.qos.logback</groupId>
-	    <artifactId>logback-classic</artifactId>
-	    <version>1.1.8</version>
-	</dependency>
- -->
-	
-	
-	<!--  CASO 2: Apache Common Logging -->
+	<!--  Esempio: Apache Common Logging -->
 	<!-- 
 	<dependency>
 	    <groupId>commons-logging</groupId>
 	    <artifactId>commons-logging</artifactId>
 	    <version>1.2</version>
 	</dependency>
-	-->
+	--> 
     
-	<!-- CASO 3 : log4j -->
-	<!-- API & BINDING: -->
-	<!--    
+	<!-- Esempio: Log4j2 -->
+	<!-- API 
+	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-api</artifactId>
+  		<version>2.8</version>
+	</dependency>
+	-->
+	<!-- IMPLEMENTAZIONE 	
 	<dependency>
 	    <groupId>org.apache.logging.log4j</groupId>
 	    <artifactId>log4j-core</artifactId>
-	    <version>2.7</version>
-	</dependency>
-	 -->
+	    <version>2.8</version>
+	</dependency>	
+	-->
   
-	<!-- CASO 4.1: slf4j su logback -->
+	<!-- Esempio: slf4j su logback -->
 	<!-- API:  
 	<dependency>
 	    <groupId>org.slf4j</groupId>
@@ -115,9 +93,10 @@
 	</dependency>
 -->
 	
+	
+<!-- BRIDGE: -->	
 
-
-	<!-- CASO 5: -->
+	<!-- Bridge log4j su logback: -->
 	<!-- API:  
 	<dependency>
 	    <groupId>org.slf4j</groupId>
@@ -125,36 +104,35 @@
 	    <version>1.7.22</version>
 	</dependency>
 	-->
-	<!-- BINDING:   
+	<!-- BINDING:    
 	 <dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-classic</artifactId>
 	    <version>1.1.8</version>
 	</dependency>
 	-->
-	
-	<!-- CASO 6: Bridge JUL logback -->
-	<!-- BRIDGE: 
+	<!-- Bridge jul su logback -->
  
+  
 	<dependency>
     	<groupId>org.slf4j</groupId>
     	<artifactId>jul-to-slf4j</artifactId>
     	<version>1.7.22</version>
 	</dependency>
--->
-	<!-- API:   
+
+	<!-- API: -->   
 	<dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-api</artifactId>
 	    <version>1.7.22</version>
 	</dependency>
-	-->
-	<!-- BINDING: 
+	
+	<!-- BINDING: --> 
 	<dependency>
 	    <groupId>ch.qos.logback</groupId>
 	    <artifactId>logback-classic</artifactId>
 	    <version>1.1.8</version>
 	</dependency>
-	-->
+	
   </dependencies>
 </project>
