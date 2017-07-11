@@ -4,7 +4,14 @@
 
 Java util common logging è presente in JDK.
 	
+
 ~~~{.java .numberLines}	
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class JulExample {
 
 	private static final Logger logger = Logger.getLogger(JulExample.class.getName());
