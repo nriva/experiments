@@ -1,0 +1,2272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+***SET*MODULO=BASE
+***SET*VERSIONE=XSR
+***DOC*TITOLO
+***STAMPA CONDIZIONI
+***DOC*DESCRIZIONE
+***STAMPA CONDIZIONI
+***DOC*AGGIORNAMENTI
+***101215*MCU*P*B77353*RILASCIO INIZIALE
+***DOC*FINE
+-->
+<xsd:schema ver:generatorVersion="2.0.3" targetNamespace="http://www.cadit.it/AF/A8GSPNS" cad:PROCEDURA="AF" cad:NUCLEO="A0" cad:PREFISSO="A8" cad:NOME="PNS" cad:ID="1603020058" cad:NUMVERSIONE="1.0" cad:TITOLO="STAMPA CONDIZIONI" cad:DESCRIZIONE="STAMPA CONDIZIONI" cad:ELABORAZIONE="TP" cad:SQL="NO" cad:TIPO_SERVIZIO="B" cad:MODULO="" tns:dummy="" att:dummy="" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ver="http://www.cadit.it/XMLSchema/Version" xmlns:cad="http://www.cadit.it/XMLSchema/Extension" xmlns:tns="http://www.cadit.it/AF/A8GSPNS" xmlns:att="http://www.cadit.it/SI/SIGSATT">
+  <xsd:import namespace="http://www.cadit.it/SI/SIGSATT" schemaLocation="../si/sigsatt.xsd" />
+  <xsd:annotation>
+    <xsd:documentation xml:lang="it">STAMPA CONDIZIONI</xsd:documentation>
+  </xsd:annotation>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:element name="Request" type="tns:tIN01" nillable="false" />
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:element name="Response" type="tns:tOUT01" nillable="false" />
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tIN01" cad:NOME="M01" cad:CONTROLLI="SI" cad:REDEFINES="NO" cad:RIPARTENZA="NO">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Parametri di stampa</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="codiceIstituto" default="0" cad:NOME="CIST" cad:NOME_LUNGO="CODICE ISTITUTO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Codice Istituto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codiceFiliale" default="0" cad:NOME="CFILIMP" cad:NOME_LUNGO="CODICE FILIALE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CODICE FILIALE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codiceAgenzia" default="0" cad:NOME="CAGE" cad:NOME_LUNGO="CODICE AGENZIA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Codice agenzia</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codiceDeposito" cad:NOME="CDEP" cad:NOME_LUNGO="CODICE DEPOSITO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Codice deposito</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codiceSottodeposito" default="0" cad:NOME="CSDP" cad:NOME_LUNGO="CODICE SOTTODEPOSITO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Codice sottodeposito</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tOUT01" cad:NOME="M01" cad:CONTROLLI="SI" cad:REDEFINES="NO" cad:RIPARTENZA="NO">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Parametri di stampa</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence />
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:element name="Request2" type="tns:tIN02" nillable="false" />
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:element name="Response2" type="tns:tOUT02" nillable="false" />
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tIN02" cad:NOME="M02" cad:CONTROLLI="SI" cad:REDEFINES="NO" cad:RIPARTENZA="NO">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Dati per stampa condizioni</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="tabPrt" type="tns:tTPRT" cad:NOME="TPRT" cad:NOME_LUNGO="TAB. PRT" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Tabella PRT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tOUT02" cad:NOME="M02" cad:CONTROLLI="SI" cad:REDEFINES="NO" cad:RIPARTENZA="NO">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Dati per stampa condizioni</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="contract" type="tns:tTCTR" cad:NOME="TCTR" cad:NOME_LUNGO="CONTRACT" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Contract data</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatoreAttorney" nillable="true" cad:NOME="QATT2" cad:NOME_LUNGO="CONTATORE ATTORNEY" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE ATTORNEY</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="signsInfo" type="tns:tTSIG" cad:NOME="TSIG" cad:NOME_LUNGO="SIGNS INFO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Signs Info</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ale" cad:NOME="NATT" cad:NOME_LUNGO="ALE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">ALE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="attorney" nillable="true" maxOccurs="10" type="tns:tTATT" cad:NOME="TATT" cad:NOME_LUNGO="ATTORNEY" cad:ARRAY="[10]" cad:ARRAYOBB="0" cad:ARRAYQELE="ale">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Attorney</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="jointHeading" nillable="true" type="tns:tTJOIHEA" cad:NOME="TJOIHEA" cad:NOME_LUNGO="JOINT HEADING" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Joint Heading</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ale" cad:NOME="NCUSJOI" cad:NOME_LUNGO="ALE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">ALE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="customer" nillable="true" maxOccurs="20" type="tns:tTCUSJOI" cad:NOME="TCUSJOI" cad:NOME_LUNGO="CUSTOMER" cad:ARRAY="[20]" cad:ARRAYOBB="0" cad:ARRAYQELE="ale">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Customer Joint Holder</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatoreFinance" nillable="true" cad:NOME="QFIN" cad:NOME_LUNGO="CONTATORE FINANCE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE FINANCE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="finance" nillable="true" type="tns:tTFIN" cad:NOME="TFIN" cad:NOME_LUNGO="FINANCE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento FINANCE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTPRT" cad:NOME="TPRT">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Tabella PRT</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="chiaveDellaConnessione" cad:NOME="CKEY" cad:NOME_LUNGO="CHIAVE DELLA CONNESSIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Chiave della connessione che ha dato origine alle stampe</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="36" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codiceSessione" cad:NOME="CSES" cad:NOME_LUNGO="CODICE SESSIONE" cad:ARRAY="[1]" cad:AMMETTI="ZERO">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Codice sessione</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tipoAppoggio" cad:NOME="SAPP" cad:NOME_LUNGO="TIPO APPOGGIO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Tipo appoggio</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codServizio" cad:NOME="CSRV" cad:NOME_LUNGO="COD. SERVIZIO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CODICE SERVIZIO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="codMetodo" cad:NOME="CMTD" cad:NOME_LUNGO="COD. METODO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CODICE METODO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="livelloServizio" cad:NOME="CLIV" cad:NOME_LUNGO="LIVELLO SERVIZIO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">LIVELLO SERVIZIO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="chiaveADisposizione" cad:NOME="CUSR" cad:NOME_LUNGO="CHIAVE A DISPOSIZIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Chiave a disposizione</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTCTR" cad:NOME="TCTR">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Contratto</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="number" nillable="true" cad:NOME="NCTR" cad:NOME_LUNGO="NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Numero contratto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="outofofficecontractflag" nillable="true" />
+      <xsd:element name="remotecontractflag" nillable="true" />
+      <xsd:element name="bankuser" nillable="true" type="tns:tTBNK" cad:NOME="TBNK" cad:NOME_LUNGO="BANKUSER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento BANKUSER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTBNK" cad:NOME="TBNK">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">BankUser</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="userid" nillable="true" cad:NOME="CUSR" cad:NOME_LUNGO="USERID" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">User ID</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="name" nillable="true" cad:NOME="CUSRNAM" cad:NOME_LUNGO="NAME" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Name</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="surname" nillable="true" cad:NOME="CUSRSUR" cad:NOME_LUNGO="SURNAME" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Surname</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTSIG" cad:NOME="TSIG">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Sing Info</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="signatureDate" nillable="true" cad:NOME="DSIG" cad:NOME_LUNGO="SIGNATURE DATE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Signature date</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="signaturePlace" nillable="true" cad:NOME="XSIGPLC" cad:NOME_LUNGO="SIGNATURE PLACE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Signature Place</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="attorney" nillable="true" maxOccurs="10" type="tns:tTATT2" cad:NOME="TATT2" cad:NOME_LUNGO="ATTORNEY" cad:ARRAY="[10]" cad:ARRAYOBB="0" cad:ARRAYQELE="contatoreAttorney">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento attorney</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatoreTcus" nillable="true" cad:NOME="QCUS" cad:NOME_LUNGO="CONTATORE TCUS" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE TCUS</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="customer" nillable="true" type="tns:tTCUS" cad:NOME="TCUS" cad:NOME_LUNGO="CUSTOMER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento CUSTOMER</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTATT2" cad:NOME="TATT2">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Attorney</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ndg" nillable="true" cad:NOME="CNDGAT2" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Ndg attorney</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="13" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTCUS" cad:NOME="TCUS">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Customer</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ndg" nillable="true" cad:NOME="CNDGPRI" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">NDG oggetto dell'attivita'</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTATT" cad:NOME="TATT">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Attorney</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="toRefresh" nillable="true" />
+      <xsd:element name="ndg" nillable="true" cad:NOME="CNDGATT" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Ndg attorney</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="13" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTJOIHEA" cad:NOME="TJOIHEA">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Joint Heading</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="toRefresh" nillable="true" cad:NOME="SRFSHEA" cad:NOME_LUNGO="TO REFRESH" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Attributo to be refresh</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="ndg" nillable="true" cad:NOME="CNDGHEA" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Ndg Joint Heading</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="13" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTCUSJOI" cad:NOME="TCUSJOI">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Customer (joint account holder)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="toRefresh" nillable="true" />
+      <xsd:element name="ndg" nillable="true" cad:NOME="CNDGJOI" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">ndg joint holder</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="13" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTFIN" cad:NOME="TFIN">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Finance</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ndg" nillable="true" cad:NOME="NCDG" cad:NOME_LUNGO="NDG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">NDG intestatario rapporto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="14" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tipoClienteMifid" nillable="true" cad:NOME="CTIPCLI" cad:NOME_LUNGO="TIPO CLIENTE MIFID" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TIPO CLIENTE MIFID</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="contatoreDep" nillable="true" cad:NOME="QDEP" cad:NOME_LUNGO="CONTATORE DEP" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE DEP</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="3" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="deposito" nillable="true" type="tns:tTDEP" cad:NOME="TDP" cad:NOME_LUNGO="DEPOSITO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento Deposito</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatorePrestito" nillable="true" cad:NOME="QPR" cad:NOME_LUNGO="CONTATORE PRESTITO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE PRESTITO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="prestito" nillable="true" type="tns:tTPR" cad:NOME="TPR" cad:NOME_LUNGO="PRESTITO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatoreNegoziazione" nillable="true" cad:NOME="QNEG" cad:NOME_LUNGO="CONTATORE NEGOZIAZIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it"></xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negoziazione" nillable="true" type="tns:tTNEG" cad:NOME="TNEG" cad:NOME_LUNGO="NEGOZIAZIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento NEGOZIAZIONE</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="contatoreConsulenza" nillable="true" cad:NOME="QCON" cad:NOME_LUNGO="CONTATORE CONSULENZA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONTATORE CONSULENZA</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="consulenza" nillable="true" type="tns:tTCON" cad:NOME="TCON" cad:NOME_LUNGO="CONSULENZA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento CONSULENZA</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="condizioni" nillable="true" type="tns:tTCND" cad:NOME="TCND" cad:NOME_LUNGO="CONDIZIONI" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">elemento CONDIZIONI</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTDEP" cad:NOME="TDEP">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Deposito</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="number" nillable="true" cad:NOME="CPRG" cad:NOME_LUNGO="NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero rapporto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="branch" nillable="true" cad:NOME="CFIL" cad:NOME_LUNGO="BRANCH" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">filiale rapporto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="category" nillable="true" cad:NOME="CCAT" cad:NOME_LUNGO="CATEGORY" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">COD.CATEG.DEPOSITO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="poteriFirma" nillable="true" cad:NOME="SFIR" cad:NOME_LUNGO="POTERI FIRMA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">A valere solo sui cointestatari</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="graz" nillable="true" cad:NOME="CGRAZ" cad:NOME_LUNGO="GRAZ" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">graz</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="4" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="productCode" nillable="true" cad:NOME="CFAC" cad:NOME_LUNGO="PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="subProductCode" nillable="true" cad:NOME="CFACSUB" cad:NOME_LUNGO="SUB PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">sotto codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="contractNumber" nillable="true" cad:NOME="NCNT" cad:NOME_LUNGO="CONTRACT NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero contratto trasparenza; si tratta del contratto di amministrazione</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="accountConditions" nillable="true" cad:NOME="SCONDCC" cad:NOME_LUNGO="ACCOUNT CONDITIONS" cad:ARRAY="[1]" cad:MAIUSCOLO="NO">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">campo necessario per chiamare il document processor. Se false per le condizioni standard.
+In inserimento del dossier (da NPV o GDEP) sempre a true.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tol" nillable="true" cad:NOME="STOL" cad:NOME_LUNGO="TOL" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">tol</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="phoneBanking" nillable="true" cad:NOME="SPHNBNK" cad:NOME_LUNGO="PHONE BANKING" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">phone banking</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="consenso1" nillable="true" cad:NOME="SCON1" cad:NOME_LUNGO="CONSENSO 1" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">CONSENSO 1</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="consenso2" nillable="true" cad:NOME="SCON2" cad:NOME_LUNGO="CONSENSO 2" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">consenso 2</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="regime" nillable="true" cad:NOME="CREG" cad:NOME_LUNGO="REGIME" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">puo' assumere i valori da 1 a 4</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="dichiarazione" nillable="true" cad:NOME="SDIC" cad:NOME_LUNGO="DICHIARAZIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">DICHIARAZIONE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="attNegoziazione" nillable="true" cad:NOME="XATTNEG" cad:NOME_LUNGO="ATT NEGOZIAZIONE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">ATT NEGOZIAZIONE</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pagamentoCed" nillable="true" cad:NOME="XPAGCED" cad:NOME_LUNGO="PAGAMENTO CED" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">PAGAMENTO CED</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="rimborsoTit" nillable="true" cad:NOME="XRIMTIT" cad:NOME_LUNGO="RIMBORSO TIT" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">RIMBORSO TIT</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="diritti" nillable="true" cad:NOME="XDIR" cad:NOME_LUNGO="DIRITTI" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">DIRITTI</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="vincoli" nillable="true" cad:NOME="SVIN" cad:NOME_LUNGO="VINCOLI" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">VINCOLI</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="dataVar" nillable="true" type="xsd:date" cad:NOME="DVAR" cad:NOME_LUNGO="DATA VAR" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">DATA VAR</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTPR" cad:NOME="TPR">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">PRESTITO</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="number" nillable="true" cad:NOME="CPRGPR" cad:NOME_LUNGO="NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numbero</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="graz" nillable="true" cad:NOME="CGRAZPR" cad:NOME_LUNGO="GRAZ" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">graz</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="4" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="productCode" nillable="true" cad:NOME="CFACPR" cad:NOME_LUNGO="PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="subProductCode" nillable="true" cad:NOME="CFACSUBPR" cad:NOME_LUNGO="SUB PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">sotto codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="depTitoliNr" nillable="true" cad:NOME="CDEPTIT" cad:NOME_LUNGO="DEP TITOLI NR" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">DEP TITOLI NR</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tipologiaReg" nillable="true" cad:NOME="STIPREG" cad:NOME_LUNGO="TIPOLOGIA REG" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TIPOLOGIA REG</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="poteriFirma" nillable="true" cad:NOME="SFIRPR" cad:NOME_LUNGO="POTERI FIRMA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">A valere solo sui cointestatari</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="contractNumber" nillable="true" cad:NOME="NCNTPR" cad:NOME_LUNGO="CONTRACT NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero contratto trasparenza; si tratta del contratto di amministrazione</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="accountConditions" nillable="true" cad:NOME="CCONDPR" cad:NOME_LUNGO="ACCOUNT CONDITIONS" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">campo necessario per chiamare il document processor. Se false per le condizioni standard.
+In inserimento del dossier (da NPV o GDEP) sempre a true.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTNEG" cad:NOME="TNEG">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">Negoziazione</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="number" nillable="true" cad:NOME="CPRGNEG" cad:NOME_LUNGO="NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero rapporto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="graz" nillable="true" cad:NOME="CGRAZNG" cad:NOME_LUNGO="GRAZ" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">graz</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="4" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="depTitoliNr" nillable="true" cad:NOME="CDEPTITNG" cad:NOME_LUNGO="DEP TITOLI NR" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">DEP TITOLI NR</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="poteriFirma" nillable="true" cad:NOME="SFIRNG" cad:NOME_LUNGO="POTERI FIRMA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">A valere solo sui cointestatari</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="dataVar" nillable="true" type="xsd:date" cad:NOME="DDATVAR" cad:NOME_LUNGO="DATA VAR" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">data var</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTCON" cad:NOME="TCON">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">consulenza</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="number" nillable="true" cad:NOME="CPRGCON" cad:NOME_LUNGO="NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero rapporto</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="11" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="graz" nillable="true" cad:NOME="CGRAZCN" cad:NOME_LUNGO="GRAZ" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">graz</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="4" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="productCode" nillable="true" cad:NOME="CFACCN" cad:NOME_LUNGO="PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="subProductCode" nillable="true" cad:NOME="CFACSUBCN" cad:NOME_LUNGO="SUB PRODUCT CODE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">sotto codice prodotto factory</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="intestatarioPortafoglio" nillable="true" cad:NOME="XINTCN" cad:NOME_LUNGO="INTESTATARIO PORTAFOGLIO" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">INTESTATARIO PORTAFOGLIO</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="poteriFirma" nillable="true" cad:NOME="SFIRCN" cad:NOME_LUNGO="POTERI FIRMA" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">da definire</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="1" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="contractNumber" nillable="true" cad:NOME="NCNTCN" cad:NOME_LUNGO="CONTRACT NUMBER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">numero contratto trasparenza</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="accountConditions" nillable="true" cad:NOME="CCONDCN" cad:NOME_LUNGO="ACCOUNT CONDITIONS" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">campo necessario per chiamare il document processor. Se false per le condizioni standard.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:integer">
+            <xsd:totalDigits value="10" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- sep -->
+  <!-- sep -->
+  <xsd:complexType name="tTCND" cad:NOME="TCND">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="it">condizioni</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="racOrdBOTTriPer" nillable="true" cad:NOME="PORDBTT" cad:NOME_LUNGO="RAC ORD B O T TRI PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - BOT Trimestrali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdBOTSemPer" nillable="true" cad:NOME="PORDBTS" cad:NOME_LUNGO="RAC ORD B O T SEM PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - BOT Semestrali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdBOTAnnPer" nillable="true" cad:NOME="PORDBTA" cad:NOME_LUNGO="RAC ORD B O T ANN PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - BOT Annuali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdBOTMin" nillable="true" cad:NOME="IORDBTM" cad:NOME_LUNGO="RAC ORD B O T MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - BOT - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdBOTSpe" nillable="true" cad:NOME="IORDBTSP" cad:NOME_LUNGO="RAC ORD B O T SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - BOT -  Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitStaPer" nillable="true" cad:NOME="PORDTST" cad:NOME_LUNGO="RAC ORD TIT STA PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli di Stato - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitStaMin" nillable="true" cad:NOME="IORDTSM" cad:NOME_LUNGO="RAC ORD TIT STA MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli di Stato - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitStaSpe" nillable="true" cad:NOME="IORDTSSP" cad:NOME_LUNGO="RAC ORD TIT STA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli di Stato - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitEstPer" nillable="true" cad:NOME="PORDTES" cad:NOME_LUNGO="RAC ORD TIT EST PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli di Stato Esteri - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitEstMin" nillable="true" cad:NOME="IORDTEM" cad:NOME_LUNGO="RAC ORD TIT EST MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli Esteri - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdTitEstSpe" nillable="true" cad:NOME="IORDTESP" cad:NOME_LUNGO="RAC ORD TIT EST SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Titoli Esteri - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgItaPer" nillable="true" cad:NOME="PORDOIT" cad:NOME_LUNGO="RAC ORD OBG ITA PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni italiane - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgItaMin" nillable="true" cad:NOME="IORDOIM" cad:NOME_LUNGO="RAC ORD OBG ITA MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni italiane  - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgItaSpe" nillable="true" cad:NOME="IORDOISP" cad:NOME_LUNGO="RAC ORD OBG ITA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni italiane  - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCnvPer" nillable="true" cad:NOME="PORDOCV" cad:NOME_LUNGO="RAC ORD OBG CNV PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili italiane - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCnvMin" nillable="true" cad:NOME="IORDOCVM" cad:NOME_LUNGO="RAC ORD OBG CNV MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili italiane  - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCnvSpe" nillable="true" cad:NOME="IORDOCVS" cad:NOME_LUNGO="RAC ORD OBG CNV SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili italiane  - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgEstPer" nillable="true" cad:NOME="PORDOES" cad:NOME_LUNGO="RAC ORD OBG EST PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Estere - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgEstMin" nillable="true" cad:NOME="IORDOESM" cad:NOME_LUNGO="RAC ORD OBG EST MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Estere  - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgEstSpe" nillable="true" cad:NOME="IORDOESS" cad:NOME_LUNGO="RAC ORD OBG EST SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Estere  - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCvEper" nillable="true" cad:NOME="PORDOCE" cad:NOME_LUNGO="RAC ORD OBG CV EPER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili Estere - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCvEmin" nillable="true" cad:NOME="IORDOCEM" cad:NOME_LUNGO="RAC ORD OBG CV EMIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili Estere  - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgCvEspe" nillable="true" cad:NOME="IORDOCES" cad:NOME_LUNGO="RAC ORD OBG CV ESPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Obbligazioni Convertibili Estere  - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgAPEPer" nillable="true" cad:NOME="POOAPE" cad:NOME_LUNGO="RAC ORD OBG A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgAPEMin" nillable="true" cad:NOME="IOOAPEM" cad:NOME_LUNGO="RAC ORD OBG A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgAPESpe" nillable="true" cad:NOME="IOOAPES" cad:NOME_LUNGO="RAC ORD OBG A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgVPEPer" nillable="true" cad:NOME="POOVPE" cad:NOME_LUNGO="RAC ORD OBG V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgVPEMin" nillable="true" cad:NOME="IOOVPEM" cad:NOME_LUNGO="RAC ORD OBG V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObgVPESpe" nillable="true" cad:NOME="IOOVPES" cad:NOME_LUNGO="RAC ORD OBG V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCAPEPer" nillable="true" cad:NOME="POOCAPE" cad:NOME_LUNGO="RAC ORD OB C A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Convertibili Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCAPEMin" nillable="true" cad:NOME="IOOCAPEM" cad:NOME_LUNGO="RAC ORD OB C A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Convertibili Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCAPESpe" nillable="true" cad:NOME="IOOCAPES" cad:NOME_LUNGO="RAC ORD OB C A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Obbligazioni Convertibili Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCVPEPer" nillable="true" cad:NOME="POOCVPE" cad:NOME_LUNGO="RAC ORD OB C V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Convertibili Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCVPEMin" nillable="true" cad:NOME="IOOCVPEM" cad:NOME_LUNGO="RAC ORD OB C V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Convertibili Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdObCVPESpe" nillable="true" cad:NOME="IOOCVPES" cad:NOME_LUNGO="RAC ORD OB C V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Obbligazioni Convertibili Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDItaPer" nillable="true" cad:NOME="POADI" cad:NOME_LUNGO="RAC ORD AZ D ITA PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Italia - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDItaMin" nillable="true" cad:NOME="IOADIM" cad:NOME_LUNGO="RAC ORD AZ D ITA MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Italia - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDItaSpe" nillable="true" cad:NOME="IOADIS" cad:NOME_LUNGO="RAC ORD AZ D ITA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Italia - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDEstPer" nillable="true" cad:NOME="POADE" cad:NOME_LUNGO="RAC ORD AZ D EST PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Esteri - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDEstMin" nillable="true" cad:NOME="IOADEM" cad:NOME_LUNGO="RAC ORD AZ D EST MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Esteri - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDEstSpe" nillable="true" cad:NOME="IOADES" cad:NOME_LUNGO="RAC ORD AZ D EST SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Azioni e Diritti Esteri - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWItaPer" nillable="true" cad:NOME="POWCWI" cad:NOME_LUNGO="RAC ORD W C W  ITA PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Italia - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWItaMin" nillable="true" cad:NOME="IOWCWIM" cad:NOME_LUNGO="RAC ORD W C W  ITA MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Italia - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWItaSpe" nillable="true" cad:NOME="IOWCWIS" cad:NOME_LUNGO="RAC ORD W C W  ITA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Italia - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWEstPer" nillable="true" cad:NOME="POWCWE" cad:NOME_LUNGO="RAC ORD W C W  EST PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Esteri - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWEstMin" nillable="true" cad:NOME="IOWCWEM" cad:NOME_LUNGO="RAC ORD W C W  EST MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Esteri - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdWCWEstSpe" nillable="true" cad:NOME="IOWCWES" cad:NOME_LUNGO="RAC ORD W C W  EST SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Warrant e Covered Warrant Esteri - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDAPEPer" nillable="true" cad:NOME="POADAPE" cad:NOME_LUNGO="RAC ORD AZ D A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Azioni e Diritti Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDAPEMin" nillable="true" cad:NOME="IOADAPEM" cad:NOME_LUNGO="RAC ORD AZ D A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Azioni e Diritti Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDAPESpe" nillable="true" cad:NOME="IOADAPES" cad:NOME_LUNGO="RAC ORD AZ D A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Acquisto Azioni e Diritti Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDVPEPer" nillable="true" cad:NOME="POADVPE" cad:NOME_LUNGO="RAC ORD AZ D V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Azioni e Diritti Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDVPEMin" nillable="true" cad:NOME="IOADVPEM" cad:NOME_LUNGO="RAC ORD AZ D V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Azioni e Diritti Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="racOrdAzDVPESpe" nillable="true" cad:NOME="IOADVPES" cad:NOME_LUNGO="RAC ORD AZ D V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Raccolta ordini - Vendita Azioni e Diritti Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProBOTTriPer" nillable="true" cad:NOME="PNEPBTT" cad:NOME_LUNGO="NEG PRO B O T  TRI PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - BOT Trimestrali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProBOTSemPer" nillable="true" cad:NOME="PNEPBTS" cad:NOME_LUNGO="NEG PRO B O T SEM PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - BOT Semestrali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProBOTAnnPer" nillable="true" cad:NOME="PNEPBTA" cad:NOME_LUNGO="NEG PRO B O T ANN PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - BOT Annuali - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProBOTMin" nillable="true" cad:NOME="INEPBTM" cad:NOME_LUNGO="NEG PRO B O T MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - BOT - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProBOTSpe" nillable="true" cad:NOME="INEPBTS" cad:NOME_LUNGO="NEG PRO B O T SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - BOT -  Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTitStaPer" nillable="true" cad:NOME="PNETS" cad:NOME_LUNGO="NEG PRO TIT STA PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTitStaMin" nillable="true" cad:NOME="INETSM" cad:NOME_LUNGO="NEG PRO TIT STA MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTitStaSpe" nillable="true" cad:NOME="INETSS" cad:NOME_LUNGO="NEG PRO TIT STA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgAPEPer" nillable="true" cad:NOME="PNOAPE" cad:NOME_LUNGO="NEG PRO OBG A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Obbligazioni di Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgAPEMin" nillable="true" cad:NOME="INOAPEM" cad:NOME_LUNGO="NEG PRO OBG A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Obbligazioni di Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgAPESpe" nillable="true" cad:NOME="INOAPES" cad:NOME_LUNGO="NEG PRO OBG A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Obbligazioni di Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgVPEPer" nillable="true" cad:NOME="PNOVPE" cad:NOME_LUNGO="NEG PRO OBG V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Obbligazioni di Pro pria Emissione - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgVPEMin" nillable="true" cad:NOME="INOVPEM" cad:NOME_LUNGO="NEG PRO OBG V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Obbligazioni di Pro pria Emissione - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProObgVPESpe" nillable="true" cad:NOME="INOVPES" cad:NOME_LUNGO="NEG PRO OBG V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Obbligazioni di Pro pria Emissione - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt120Per" nillable="true" cad:NOME="PNETS12" cad:NOME_LUNGO="NEG PRO T ST120 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  120 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt120Min" nillable="true" cad:NOME="INETS12M" cad:NOME_LUNGO="NEG PRO T ST120 MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR  &lt; 120 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt120Spe" nillable="true" cad:NOME="INETS12S" cad:NOME_LUNGO="NEG PRO T ST120 SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  120 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt240Per" nillable="true" cad:NOME="PNETS24" cad:NOME_LUNGO="NEG PRO T ST240 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  240 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt240Min" nillable="true" cad:NOME="INETS24M" cad:NOME_LUNGO="NEG PRO T ST240 MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR  &lt; 240 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt240Spe" nillable="true" cad:NOME="INETS24S" cad:NOME_LUNGO="NEG PRO T ST240 SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  240 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt370Per" nillable="true" cad:NOME="PNETS37" cad:NOME_LUNGO="NEG PRO T ST370 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  370 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt370Min" nillable="true" cad:NOME="INETS37M" cad:NOME_LUNGO="NEG PRO T ST370 MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR  &lt; 370 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negProTSt370Spe" nillable="true" cad:NOME="INETS37S" cad:NOME_LUNGO="NEG PRO T ST370 SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Titoli di Stato con VR &lt;  370 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120APEPer" nillable="true" cad:NOME="PNAPE12" cad:NOME_LUNGO="NEG PRO 120 A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;  120 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120APEMin" nillable="true" cad:NOME="INAPE12M" cad:NOME_LUNGO="NEG PRO 120 A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR  &lt; 120 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120APESpe" nillable="true" cad:NOME="INAPE12S" cad:NOME_LUNGO="NEG PRO 120 A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;  120 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240APEPer" nillable="true" cad:NOME="PNAPE24" cad:NOME_LUNGO="NEG PRO 240 A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR  &lt; 240 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240APEMin" nillable="true" cad:NOME="INAPE24M" cad:NOME_LUNGO="NEG PRO 240 A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;  240 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240APESpe" nillable="true" cad:NOME="INAPE24S" cad:NOME_LUNGO="NEG PRO 240 A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;   240 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370APEPer" nillable="true" cad:NOME="PNAPE37" cad:NOME_LUNGO="NEG PRO 370 A P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR  &lt; 370 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370APEMin" nillable="true" cad:NOME="INAPE37M" cad:NOME_LUNGO="NEG PRO 370 A P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;   370 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370APESpe" nillable="true" cad:NOME="INAPE37S" cad:NOME_LUNGO="NEG PRO 370 A P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Acquisto Titoli di Pro pria Emissione con VR &lt;  370 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120VPEPer" nillable="true" cad:NOME="PNVPE12" cad:NOME_LUNGO="NEG PRO 120 V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 120 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120VPEMin" nillable="true" cad:NOME="INVPE12M" cad:NOME_LUNGO="NEG PRO 120 V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 120 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro120VPESpe" nillable="true" cad:NOME="INVPE12S" cad:NOME_LUNGO="Neg Pro 120 V P E Spe" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR   120 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240VPEPer" nillable="true" cad:NOME="PNVPE24" cad:NOME_LUNGO="NEG PRO 240 V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 240 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240VPEMin" nillable="true" cad:NOME="INVPE24M" cad:NOME_LUNGO="NEG PRO 240 V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 240 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro240VPESpe" nillable="true" cad:NOME="INVPE24S" cad:NOME_LUNGO="NEG PRO 240 V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 240 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370VPEPer" nillable="true" cad:NOME="PNVPE37" cad:NOME_LUNGO="NEG PRO 370 V P E PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 370 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370VPEMin" nillable="true" cad:NOME="INVPE37M" cad:NOME_LUNGO="NEG PRO 370 V P E MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 370 giorni - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="negPro370VPESpe" nillable="true" cad:NOME="INVPE37S" cad:NOME_LUNGO="NEG PRO 370 V P E SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Vendita Titoli di Pro pria Emissione con VR  &lt; 370 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="spezzatureMin" nillable="true" cad:NOME="ISPZMIN" cad:NOME_LUNGO="SPEZZATURE MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Spezzature - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="spezzatureSpe" nillable="true" cad:NOME="ISPZSPE" cad:NOME_LUNGO="SPEZZATURE SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Neg oziazione per Conto Pro prio - Spezzature - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="preBOT000080Per" nillable="true" cad:NOME="PBT80" cad:NOME_LUNGO="PRE B O T 000080 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con VR &lt;  80 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="preBOT081140Per" nillable="true" cad:NOME="PBT140" cad:NOME_LUNGO="PRE B O T 081140 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con 81 &lt;  VR &lt;  140 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="preBOT141270Per" nillable="true" cad:NOME="PBT270" cad:NOME_LUNGO="PRE B O T 141270 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con 141 &lt;  VR &lt;  270 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="preBOT271999Per" nillable="true" cad:NOME="PBT271" cad:NOME_LUNGO="PRE B O T 271999 PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con VR &gt;  271 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pCTPrSpe" nillable="true" cad:NOME="ICTPSPE" cad:NOME_LUNGO="P C T PR SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con VR   271 giorni - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="pCTTeSpe" nillable="true" cad:NOME="ICTTSPE" cad:NOME_LUNGO="P C T TE SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Prenotazione BOT con VR   271 giorni - Spese</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="comIntPer" nillable="true" cad:NOME="PCOMINT" cad:NOME_LUNGO="COM INT PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Commissioni di Intervento - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inesItaSpe" nillable="true" cad:NOME="ISPINIT" cad:NOME_LUNGO="INES ITA SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Spese di ineseguito italia</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="inesEstSpe" nillable="true" cad:NOME="ISPINES" cad:NOME_LUNGO="INES EST SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">Spese di ineseguito estero</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdPer" nillable="true" cad:NOME="PCMTOL" cad:NOME_LUNGO="TOL RAC ORD PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Comm. %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdMin" nillable="true" cad:NOME="ICMTOLMN" cad:NOME_LUNGO="TOL RAC ORD MIN" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Comm. Minime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdMax" nillable="true" cad:NOME="ICMTOLMX" cad:NOME_LUNGO="TOL RAC ORD MAX" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Comm. Massime</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdEseSpe" nillable="true" cad:NOME="ICMTOLSE" cad:NOME_LUNGO="TOL RAC ORD ESE SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Spese per eseguito</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdIneSpe" nillable="true" cad:NOME="ICMTOLSI" cad:NOME_LUNGO="TOL RAC ORD INE SPE" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Spese per ineseguito</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="tolRacOrdIntPer" nillable="true" cad:NOME="PCMTOLIN" cad:NOME_LUNGO="TOL RAC ORD INT PER" cad:ARRAY="[1]">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="it">TOL - Commissioni di raccolta ordini - Comm. di intervento %</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:totalDigits value="18" />
+            <xsd:fractionDigits value="6" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
