@@ -12,7 +12,7 @@ public class LogTest
 	{
     	/* SLF4J: */
 
-        org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(App.class);
+        org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(LogTest.class);
         logger.info("Hello World");
         
         org.slf4j.Logger logger2 = org.slf4j.LoggerFactory.getLogger("logger2");
