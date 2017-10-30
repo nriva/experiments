@@ -1,0 +1,16 @@
+<complexType name="ProgramInterface">
+   <complexContent>
+     <restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+       <sequence>
+         <element name="zsrvall_ws">
+           <simpleType>
+             <restriction base="{http://www.w3.org/2001/XMLSchema}string">
+               <maxLength value="30920"/>
+               <whiteSpace value="preserve"/>
+             </restriction>
+           </simpleType>
+         </element>
+       </sequence>
+     </restriction>
+   </complexContent>
+ </complexType>

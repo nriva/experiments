@@ -13,6 +13,7 @@
 	<modules>
 		<module>hellospring</module>
 		<module>HelloWorldWS</module>
+		<module>lifecycleex1</module>
 		<module>loggerexamples</module>
 		<module>RESTfulExample</module>
 		<module>SpringMVCTest</module>
