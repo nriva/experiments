@@ -51,6 +51,10 @@
 				<version>2.4.2</version>
 			</plugin>	
 			<plugin>
+			<!-- 
+			Uso il goal "copy-dependencies" nella phase "verify".
+			Il maven-dependency-plugin viene usato nella phase "dependency"
+			 -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.8</version>
