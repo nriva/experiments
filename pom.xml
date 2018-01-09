@@ -20,5 +20,6 @@
 		<module>test</module>
 		<module>testhibernate</module>
 		<module>testredirect</module>
+		<module>picocli-ex</module>
 	</modules>
 </project>
