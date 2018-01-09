@@ -1,7 +1,7 @@
 
 # Java Experiments
 
-[![Build Status](https://travis-ci.org/nriva/experiments.svg?branch=develop)](https://travis-ci.org/nriva/experiments)
+[![Build Status](https://travis-ci.org/nriva/experiments.svg?branch=master)](https://travis-ci.org/nriva/experiments)
 
 ## Raccolta di vari esempi
 
