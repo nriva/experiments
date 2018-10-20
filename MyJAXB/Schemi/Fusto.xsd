@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?> 
+<xs:schema
+  xmlns:sc1="http://www.elementiBase.bindings.com"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.elementiBase.bindings.com"
+>
+<xs:import namespace="http://www.w3.org/2001/XMLSchema" />
+<xs:element name="CaratteristicheFusto">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Tipo" type="xs:string" />
+      <xs:element name="Spessore" type="xs:int" />
+      <xs:element name="Altezza" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

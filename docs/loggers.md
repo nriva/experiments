@@ -4,8 +4,8 @@
 
 Java util common logging è presente in JDK.
 	
-~~~{.java .numberLines}	
 
+~~~{.java .numberLines}	
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
